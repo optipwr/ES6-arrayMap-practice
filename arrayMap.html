@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<!-- This is from Udemy course from Stephen Grider. -->
+
+<script type="text/javascript">
+	
+var numbers = [1,2,3];
+var doubledNumbers = [];
+
+for (var i = 0; i < numbers.length; i++){
+	doubledNumbers.push(numbers[i] * 2);
+}
+
+console.log(doubledNumbers);
+
+// Now with array map
+
+var doubled = numbers.map(function(number){
+	// when using .map you MUST return somthing or else the array will look like [null,null,null]
+	return number * 2;
+});
+
+console.log(doubled);
+
+var cars = [
+	{model: 'Buick', price: 'CHEAP'},
+	{model: 'Camaro', price: 'expensive'}
+];
+
+var prices = cars.map(function(car){
+	return car.price;
+});
+
+console.log(prices);
+
+// Exercises:
+// 1. Using map, create a new array that contains the 'height' property of each object.  Assign this new array to the variable 'heights'.  Don't forget to use the 'return' keyword in the function!
+
+var images = [
+	{ height: '34px', width: '39px' },
+	{ height: '54px', width: '19px' },
+	{ height: '83px', width: '75px' },
+];
+
+var heights = images.map(function(image){
+    return image.height;
+});
+
+// 2. Using map, create a new array that contains the distance / time value from each trip.  In other words, the new array should contain the (distance / time) value.  Assign the result to the variable 'speeds'.
+
+var trips = [
+	{ distance: 34, time: 10 },
+	{ distance: 90, time: 50 },
+	{ distance: 59, time: 25 }
+];
+
+var speeds = trips.map(function(speed){
+	return speed.distance / speed.time;
+});
+
+// 3. This is a hard one! Implement a 'pluck' function.  Pluck should accept an array and a string representing a property name and return an  array containing that property from each object. 
+
+// personal note: This question was poorly created and left out important information needed to solve
+
+var paints = [ { color: 'red' }, { color: 'blue' }, { color: 'yellow' }];
+
+function pluck(paints, property) {
+    return paints.map(function(paint){
+        return paint[property];
+    });
+}
+
+
+
+</script>
+
+</body>
+</html>
